@@ -1,0 +1,32 @@
+.nav {
+  grid-area: nav;
+  background-color: rgb(173, 42, 42);
+  padding: 20px;
+  
+}
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+.item a.active{
+  color: orange;
+}
+
+.friendList {
+  padding: 0;
+}
+
+.friendList li {
+  list-style-type: none;
+}
+
+.friendItemImg{
+  display: flex;
+}
+
+.friendItemImg img{
+  width: 30px;
+  margin-right: 10px;
+}
