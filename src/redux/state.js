@@ -1,3 +1,7 @@
+let rerenderEntireTree = () => {
+    console.log("State changes");
+} 
+
 let state = {
     ProfilePage: {
         posts: [
@@ -5,7 +9,8 @@ let state = {
             {id: 2, message: "I'm fine and you? ", likesCount: 11},
             {id: 3, message: "I'm fine and you? ", likesCount: 11},
             {id: 4, message: "I'm fine and you? ", likesCount: 11} 
-        ]
+        ],
+        newPostText: 'test'
     },
     dialogsPage: {
         dialogs: [
@@ -26,6 +31,28 @@ let state = {
             {img: "https://ru.wargaming.net/clans/media/clans/emblems/cl_215/425215/emblem_195x195.png", name: 'Oleg'},
         ],
     },
+}
+
+window.state = state;
+
+export const addPost = () => {
+    let newPost = {
+        id: 5,
+        message: state.ProfilePage.newPostText,
+        likesCount: 0
+    }
+    state.ProfilePage.posts.push(newPost);
+    state.ProfilePage.newPostText="";
+    rerenderEntireTree(state);
+}
+
+export const updateNewPostText = (newText) => {
+    state.ProfilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+    let rerenderEntireTree = observer;
 }
 
 export default state;
