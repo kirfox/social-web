@@ -1,3 +1,4 @@
+import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import styles from './ProfileInfo.module.css';
 import ProfileStatus from './ProfileStatus';
@@ -12,10 +13,11 @@ const ProfileInfo = (props) => {
 
 
   return(
+    
     <div>
-        {/* <div>
+        { <div>
           <img src="http://countervest.com/wp-content/uploads/2020/05/tech-stock-image.jpg"></img>
-        </div> */}
+        </div> }
         <div className={styles.descriptionBlock}>
           { props.profile.photos.large == null ? 
             <img src="https://ru.wargaming.net/clans/media/clans/emblems/cl_215/425215/emblem_195x195.png"></img> 
@@ -29,6 +31,7 @@ const ProfileInfo = (props) => {
           
         </div>
     </div>
+ 
   )
 }
 
